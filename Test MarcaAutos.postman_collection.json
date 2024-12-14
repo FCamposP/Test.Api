@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "76b3a2c2-5c70-4f36-91de-cc320ae6f00a",
+		"name": "Test MarcaAutos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12269662"
+	},
+	"item": [
+		{
+			"name": "ObtenerMarcasAutos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/MarcasAutos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"MarcasAutos",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/MarcasAutos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"MarcasAutos",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 14 Dec 2024 21:31:32 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"marcaAutoId\": 1,\n        \"codigo\": \"MAU01\",\n        \"nombre\": \"Ford\",\n        \"descripcion\": \"Marca americana\"\n    },\n    {\n        \"marcaAutoId\": 2,\n        \"codigo\": \"MAU02\",\n        \"nombre\": \"Chevrolet\",\n        \"descripcion\": \"Marca americana\"\n    },\n    {\n        \"marcaAutoId\": 3,\n        \"codigo\": \"MAU03\",\n        \"nombre\": \"Jeep\",\n        \"descripcion\": \"Marca americana\"\n    },\n    {\n        \"marcaAutoId\": 4,\n        \"codigo\": \"MAU04\",\n        \"nombre\": \"BMW\",\n        \"descripcion\": \"Marca europea\"\n    },\n    {\n        \"marcaAutoId\": 5,\n        \"codigo\": \"MAU05\",\n        \"nombre\": \"Mercedes-Benz\",\n        \"descripcion\": \"Marca europea\"\n    },\n    {\n        \"marcaAutoId\": 6,\n        \"codigo\": \"MAU06\",\n        \"nombre\": \"Volkswagen\",\n        \"descripcion\": \"Marca europea\"\n    },\n    {\n        \"marcaAutoId\": 7,\n        \"codigo\": \"MAU07\",\n        \"nombre\": \"Toyota\",\n        \"descripcion\": \"Marca asiática\"\n    },\n    {\n        \"marcaAutoId\": 8,\n        \"codigo\": \"MAU08\",\n        \"nombre\": \"Honda\",\n        \"descripcion\": \"Marca asiática\"\n    },\n    {\n        \"marcaAutoId\": 9,\n        \"codigo\": \"MAU09\",\n        \"nombre\": \"Mitsubishi\",\n        \"descripcion\": \"Marca asiática\"\n    }\n]"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,11 @@
+* Creación de base de datos automáticamente
+* Carga de datos iniciales (Seed Data)
+* Correr los servicios con docker compose
+     docker-compose up --build
+* Correr prueba unitaria 
+    dotnet test
+* Importar archivo de Postman para progar la api en el puerto 5001
+
+* La solución cuenta con la facilidad de funciones CRUD de forma genérica para todas las entidades que se requieren en una Base de Datos
+
+Elaborado por Fabricio Campos
