@@ -4,6 +4,10 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 8080
 
+# Descargar el script wait-for-it.sh
+ADD https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh /wait-for-it.sh
+RUN chmod +x /wait-for-it.sh
+
 # Etapa de construcción con la imagen de SDK para compilar el proyecto
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
@@ -32,5 +36,12 @@ RUN dotnet publish "Test.Api.csproj" -c Release -o /app/publish /p:UseAppHost=fa
 # Etapa final para ejecutar la API en un contenedor de producción
 FROM base AS final
 WORKDIR /app
+
+# Copiar el script wait-for-it.sh desde la etapa base
+COPY --from=base /wait-for-it.sh /wait-for-it.sh
+
+# Copiar los archivos de publicación desde la etapa publish
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Test.Api.dll"]
+
+# Configurar el ENTRYPOINT para esperar a PostgreSQL antes de iniciar la aplicación
+ENTRYPOINT ["/wait-for-it.sh", "postgres:5432", "--", "dotnet", "Test.Api.dll"]
